@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			people: [],
-			PeopleDetalis:[]
+			
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -24,24 +24,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 			loadSomePeople: () => {
 				fetch("https://www.swapi.tech/api/people")
-					.then(res => res.json())
+					.then(response => response.json())
 					.then(data => {
 						const peoplePromises = data.results.map(person =>
 							fetch(`https://www.swapi.tech/api/people/${person.uid}`)
 								.then(res => res.json())
-								.then(detail => ({
+								.then(data => ({
 									id: person.uid,
 									name: person.name,
-									gender: detail.result.properties.gender,
-									hair_color: detail.result.properties.hair_color,
-									eye_color: detail.result.properties.eye_color,
-									description: detail.result.description
+									gender: data.result.properties.gender,
+									hair_color: data.result.properties.hair_color,
+									eye_color: data.result.properties.eye_color,
+									description: data.result.description
 								}))
 						);
 						return Promise.all(peoplePromises);
 					})
-					.then(peopleDetails => setStore({ people: peopleDetails }))
-					.catch(err => console.error(err));
+					.then(data => setStore({ people: data }))
+					.catch(error => console.error(error));
+					
 			},
 
 			changeColor: (index, color) => {
