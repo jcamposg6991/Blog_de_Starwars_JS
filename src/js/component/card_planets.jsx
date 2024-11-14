@@ -49,7 +49,7 @@ export const CardPlanets = () => {
     ));
 
     return (
-        <div>
+        <div className="galaxyBackground">
             <p className="text-center text-white font-monospace display-3 fw-light">Planets</p>
             {planetItems.length > 0 ? (
                 <Carousel>

@@ -51,7 +51,7 @@ export const CardVehicles = () => {
     ));
 
     return (
-        <div>
+        <div className="galaxyBackground">
             <p className="text-center text-white font-monospace display-3 fw-light">Vehicles</p>
             {vehicleItems.length > 0 ? (
                 <Carousel>

@@ -50,7 +50,7 @@ export const CardPeople = () => {
     ));
 
     return (
-        <div>
+        <div className="galaxyBackground">
             <p className="text-center text-white font-monospace display-3 fw-light">Characters</p>
             {peopleItems.length > 0 ? (
                 <Carousel>

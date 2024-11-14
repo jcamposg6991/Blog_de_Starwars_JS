@@ -5,7 +5,7 @@ import { CardPlanets } from "../component/card_planets.jsx";
 import { CardVehicles } from "../component/card_vehicles.jsx";
 
 export const Home = () => (
-	<div className="text-center mt-5">
+	<div className="text-center">
 		<CardPeople />
 		<CardPlanets />
 		<CardVehicles />
