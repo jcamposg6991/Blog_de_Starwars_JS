@@ -1,3 +1,8 @@
 /* 
     General Styles
 */
+
+body{
+    background-color: black;
+    /* background: url("../img/fondo.jpg") center center no-repeat; */
+}

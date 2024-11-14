@@ -12,7 +12,7 @@ export const CardPlanets = () => {
     const planetItems = store.planets.map((item, index) => (
         <Carousel.Item key={index}>
             <div className="d-flex justify-content-center">
-                <div className="card" style={{ marginBottom: "20px" }}>
+                <div className="card mb-5">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/planets/${index + 1}.jpg`}
                         onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
@@ -50,13 +50,13 @@ export const CardPlanets = () => {
 
     return (
         <div>
-            <p className="text-center font-monospace display-3 fw-light bg-light">Planets</p>
+            <p className="text-center text-white font-monospace display-3 fw-light">Planets</p>
             {planetItems.length > 0 ? (
                 <Carousel>
                     {planetItems}
                 </Carousel>
             ) : (
-                <p className="text-center">No planets available</p>
+                <p className="text-center text-white">No planets available</p>
             )}
         </div>
     );

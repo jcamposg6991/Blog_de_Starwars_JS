@@ -12,13 +12,13 @@ export const Navbar = () => {
 
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3 ps-3">
+		<nav className="navbar navbar-light mb-3 ps-3">
 			<Link to="/">
-				<img src="https://logos-world.net/wp-content/uploads/2020/11/Star-Wars-Logo.png" alt="" width="200" height="100" />
+				<img src="https://infonegocios.info/content/images/2023/10/24/415577/conversions/star-wars-impactmkt-medium-size.jpg" alt="" width="200" height="100" />
 			</Link>
 			<div className="ml-auto pe-3">
 				<div class="btn-group" role="group">
-					<button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					<button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 						Favorites
 					</button>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnGroupDrop1">

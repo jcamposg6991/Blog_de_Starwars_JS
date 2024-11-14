@@ -6,8 +6,8 @@ import { CardVehicles } from "../component/card_vehicles.jsx";
 
 export const Home = () => (
 	<div className="text-center mt-5">
-		<CardPeople/>
-		<CardPlanets/>
-		<CardVehicles/>
+		<CardPeople />
+		<CardPlanets />
+		<CardVehicles />
 	</div>
 );

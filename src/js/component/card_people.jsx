@@ -12,7 +12,7 @@ export const CardPeople = () => {
     const peopleItems = store.people.map((item) => (
         <Carousel.Item key={item.id}>
             <div className="d-flex justify-content-center">
-                <div className="card" style={{ marginBottom: "20px" }}>
+                <div className="card mb-5">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/characters/${item.id}.jpg`}
                         onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
@@ -51,13 +51,13 @@ export const CardPeople = () => {
 
     return (
         <div>
-            <p className="text-center font-monospace display-3 fw-light bg-light">Characters</p>
+            <p className="text-center text-white font-monospace display-3 fw-light">Characters</p>
             {peopleItems.length > 0 ? (
                 <Carousel>
                     {peopleItems}
                 </Carousel>
             ) : (
-                <p className="text-center">No characters available</p>
+                <p className="text-center text-white">No characters available</p>
             )}
         </div>
     );

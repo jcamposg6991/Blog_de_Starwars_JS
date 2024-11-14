@@ -14,7 +14,7 @@ export const CardVehicles = () => {
     const vehicleItems = store.vehicles.map((item, index) => (
         <Carousel.Item key={index}>
             <div className="d-flex justify-content-center">
-                <div className="card" style={{ marginBottom: "20px" }}>
+                <div className="card mb-5">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/vehicles/${index + 1}.jpg`}
                         onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
@@ -52,13 +52,13 @@ export const CardVehicles = () => {
 
     return (
         <div>
-            <p className="text-center font-monospace display-3 fw-light bg-light">Vehicles</p>
+            <p className="text-center text-white font-monospace display-3 fw-light">Vehicles</p>
             {vehicleItems.length > 0 ? (
                 <Carousel>
                     {vehicleItems}
                 </Carousel>
             ) : (
-                <p className="text-center">No vehicles available</p>
+                <p className="text-center text-white">No vehicles available</p>
             )}
         </div>
     );
