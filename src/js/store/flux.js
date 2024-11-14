@@ -53,14 +53,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				const favorite = {name: item.name};
 				setStore({ favorites: [...store.favorites, favorite] });
-				console.log(store.favorites);
 			},
 
 			deleteFavorite: (item) => {
 				const store = getStore();
 				const updatedFavorites = store.favorites.filter(favorite => favorite.name !== item.name);
 				setStore({ favorites: updatedFavorites });
-				console.log(updatedFavorites);
 			},
 
 			loadSomePlanets: () => {
