@@ -32,7 +32,7 @@ export const Card = () => {
                                         <button type="button" class="btn btn-outline-primary ">Learn More!</button>
                                     </div>
                                     <div className="col-6 d-flex justify-content-end">
-                                        <button type="button" class="btn btn-outline-warning"><i class="fa-regular fa-heart"></i></button>
+                                        <button type="button" class="btn btn-outline-warning" onClick={()=>{actions.saveFavorite(item)}}><i class="fa-regular fa-heart"></i></button>
                                     </div>
                                 </div>
                             </div>

@@ -47,9 +47,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					
 			},
 
-			saveFavorite:(itemId, itemName) => {
-				const favorite = [{id:itemId,name:itemName,}]
-				setStore({favorites: favorite})
+			saveFavorite: (item) => {
+				const store = getStore();
+				const favorite = { id: item.id, name: item.name };
+				setStore({ favorites: [...store.favorites, favorite] });
+				console.log(store.favorites);
 			},
 
 			changeColor: (index, color) => {
