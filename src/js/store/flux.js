@@ -14,15 +14,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			people: [],
-			favorites:[]
-			
+			favorites: [],
+			planets: [],
+			vehicles: []
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			
+
 			loadSomePeople: () => {
 				fetch("https://www.swapi.tech/api/people")
 					.then(response => response.json())
@@ -44,21 +46,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 					// .then(data => console.log(data))
 					.then(data => setStore({ people: data }))
 					.catch(error => console.error(error));
-					
+
 			},
 
 			saveFavorite: (item) => {
 				const store = getStore();
-				const favorite = { id: item.id, name: item.name };
+				const favorite = {name: item.name};
 				setStore({ favorites: [...store.favorites, favorite] });
 				console.log(store.favorites);
 			},
 
 			deleteFavorite: (item) => {
 				const store = getStore();
-				const updatedFavorites = store.favorites.filter(favorite => favorite.id !== item.id);
+				const updatedFavorites = store.favorites.filter(favorite => favorite.name !== item.name);
 				setStore({ favorites: updatedFavorites });
 				console.log(updatedFavorites);
+			},
+
+			loadSomePlanets: () => {
+				fetch("https://swapi.dev/api/planets")
+					.then(response => response.json())
+					// .then(data => console.log(data.results))
+					.then(data => setStore({ planets: data.results }))
+					.catch(error => console.log(error))
+			},
+
+			loadSomeVehicles: () => {
+				fetch("https://swapi.dev/api/vehicles")
+					.then(response => response.json())
+					// .then(data => console.log(data.results))
+					.then(data => setStore({ vehicles: data.results }))
+					.catch(error => console.log(error))
 			},
 
 			changeColor: (index, color) => {
