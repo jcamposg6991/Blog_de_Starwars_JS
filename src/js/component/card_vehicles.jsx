@@ -4,14 +4,13 @@ import { Carousel } from "react-bootstrap";
 
 export const CardVehicles = () => {
 
-    
+
     const { store, actions } = useContext(Context);
 
     useEffect(() => {
         actions.loadSomeVehicles();
     }, []);
 
-    // Mapeamos los vehículos y los guardamos en una constante
     const vehicleItems = store.vehicles.map((item, index) => (
         <Carousel.Item key={index}>
             <div className="d-flex justify-content-center">
@@ -33,10 +32,14 @@ export const CardVehicles = () => {
                                 <button type="button" className="btn btn-outline-primary">Learn More!</button>
                             </div>
                             <div className="col-6 d-flex justify-content-end">
-                                <button type="button" className="btn btn-outline-warning" onClick={() => {
-                                    const isFavorite = store.favorites.some(favorite => favorite.name === item.name);
-                                    isFavorite ? actions.deleteFavorite(item) : actions.saveFavorite(item);
-                                }}>
+                                <button
+                                    type="button"
+                                    className={`btn ${store.favorites.some(favorite => favorite.name === item.name) ? "btn-warning" : "btn-outline-warning"}`}
+                                    onClick={() => {
+                                        const isFavorite = store.favorites.some(favorite => favorite.name === item.name);
+                                        isFavorite ? actions.deleteFavorite(item) : actions.saveFavorite(item);
+                                    }}
+                                >
                                     <i className="fa-regular fa-heart"></i>
                                 </button>
                             </div>
