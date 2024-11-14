@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Carousel } from "react-bootstrap";
 
-export const Card = () => {
+export const CardPeople = () => {
     const { store, actions } = useContext(Context);
 
     useEffect(() => {
