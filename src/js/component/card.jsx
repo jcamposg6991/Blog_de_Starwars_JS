@@ -11,6 +11,7 @@ export const Card = () => {
 
     return (
         <Carousel>
+            <p className="text-center font-monospace display-3 fw-light ms-3 bg-light">Characters</p>
             {store.people.map((item) => (
                 <Carousel.Item key={item.id}>
                     <div className="d-flex justify-content-center">
