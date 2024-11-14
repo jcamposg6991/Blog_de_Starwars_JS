@@ -54,6 +54,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(store.favorites);
 			},
 
+			deleteFavorite: (item) => {
+				const store = getStore();
+				const updatedFavorites = store.favorites.filter(favorite => favorite.id !== item.id);
+				setStore({ favorites: updatedFavorites });
+				console.log(updatedFavorites);
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

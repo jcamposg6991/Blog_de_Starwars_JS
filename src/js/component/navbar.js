@@ -21,11 +21,14 @@ export const Navbar = () => {
 					<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 						Favorites
 					</button>
-					<ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-
-						{store.favorites.map((item) => (
-							<li key={item.id}><a class="dropdown-item" href="#">{item.name}</a></li>
-						))}
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnGroupDrop1">
+						{store.favorites.length === 0 ? (
+							<li className="task-item">There're not favorites</li>
+						) : (
+							store.favorites.map((item) => (
+								<li class="d-flex" key={item.id}><a class="dropdown-item" href="#">{item.name}</a><button type="button" class="btn btn-light" onClick={() => { actions.deleteFavorite(item) }}><i class="fa-solid fa-trash"></i></button></li>
+							))
+						)}
 					</ul>
 				</div>
 			</div>
