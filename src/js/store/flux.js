@@ -14,6 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			people: [],
+			favorites:[]
 			
 		},
 		actions: {
@@ -40,9 +41,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						);
 						return Promise.all(peoplePromises);
 					})
+					// .then(data => console.log(data))
 					.then(data => setStore({ people: data }))
 					.catch(error => console.error(error));
 					
+			},
+
+			saveFavorite:(itemId, itemName) => {
+				const favorite = [{id:itemId,name:itemName,}]
+				setStore({favorites: favorite})
 			},
 
 			changeColor: (index, color) => {

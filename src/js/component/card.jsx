@@ -9,9 +9,6 @@ export const Card = () => {
         actions.loadSomePeople();
     }, []);
 
-    console.log(store.people);
-    
-
     return (
         <Carousel>
             {store.people.map((item) => (
@@ -19,7 +16,7 @@ export const Card = () => {
                     <div className="d-flex justify-content-center">
                         <div className="card" style={{ marginBottom: "20px" }}>
                             <img
-                                src="https://picsum.photos/800/500"
+                                src={`https://starwars-visualguide.com/assets/img/characters/${item.id}.jpg`}
                                 className="card-img-top"
                                 alt={item.name}
                             />
@@ -35,7 +32,7 @@ export const Card = () => {
                                         <button type="button" class="btn btn-outline-primary ">Learn More!</button>
                                     </div>
                                     <div className="col-6 d-flex justify-content-end">
-                                        <button type="button" class="btn btn-outline-warning "><i class="fa-regular fa-heart"></i></button>
+                                        <button type="button" class="btn btn-outline-warning"><i class="fa-regular fa-heart"></i></button>
                                     </div>
                                 </div>
                             </div>
