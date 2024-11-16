@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const CardPeople = () => {
     const { store, actions } = useContext(Context);
@@ -8,6 +9,8 @@ export const CardPeople = () => {
     useEffect(() => {
         actions.loadSomePeople();
     }, []);
+
+    console.log(store.people);
 
     const peopleItems = store.people.map((item) => (
         <Carousel.Item key={item.id}>
@@ -28,7 +31,7 @@ export const CardPeople = () => {
                         </p>
                         <div className="row">
                             <div className="col-6 d-flex justify-content-start">
-                                <button type="button" className="btn btn-outline-primary">Learn More!</button>
+                                <Link type="button" className="btn btn-outline-primary" to={"/characterProfile/" + item.id}>Learn More!</Link>
                             </div>
                             <div className="col-6 d-flex justify-content-end">
                                 <button
