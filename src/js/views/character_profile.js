@@ -12,17 +12,17 @@ export const CharacterProfile = props => {
 	return (
 		<>
 			<div className="row d-flex align-items-center justify-content-center mx-1 galaxyBackground">
-				<div className="col-lg-6 col-11">
+				<div className="col-lg-6 col-11 d-flex justify-content-center">
 					<img
 						src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}
 						onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
-						className="card-img-top"
+						className="card-img-top w-75"
 						alt={store.people[params.theid].name}
 					/>
 				</div>
 				<div className="col-lg-6 col-11 text-white text-center d-flex align-items-center">
 
-					<p><h1 className="text-warning" style={{ fontSize: "60px" }}>Description</h1><br></br>This individual stands at a height of {store.people[params.theid - 1].height} cm and weighs {store.people[params.theid - 1].mass} kg, presenting a {store.people[params.theid - 1].gender} appearance with {store.people[params.theid - 1].hair_color} hair and {store.people[params.theid - 1].eye_color} eyes. Their {store.people[params.theid - 1].skin_color} complexion adds to their distinctive features, making them notable in their surroundings. Born in the year {store.people[params.theid - 1].birth_year}, they come from an era that has shaped their personality and destiny in significant ways.
+					<p className="fs-5"><h1 className="text-warning" style={{ fontSize: "60px" }}>Description</h1><br></br>This individual stands at a height of {store.people[params.theid - 1].height} cm and weighs {store.people[params.theid - 1].mass} kg, presenting a {store.people[params.theid - 1].gender} appearance with {store.people[params.theid - 1].hair_color} hair and {store.people[params.theid - 1].eye_color} eyes. Their {store.people[params.theid - 1].skin_color} complexion adds to their distinctive features, making them notable in their surroundings. Born in the year {store.people[params.theid - 1].birth_year}, they come from an era that has shaped their personality and destiny in significant ways.
 						Originating from {store.people[params.theid - 1].homeworld}, their story is closely tied to their planet of birth, a place that influences their outlook and character. Their existence was officially documented on {store.people[params.theid - 1].created} and updated on {store.people[params.theid - 1].edited}, reflecting their relevance and role in the larger narrative.
 						Their unique blend of physical traits and background makes them an intriguing figure, whether they are a symbol of hope, a skilled warrior, or a leader navigating through challenges in their journey.</p>
 				</div>
