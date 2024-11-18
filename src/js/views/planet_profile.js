@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 export const PlanetProfile = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	console.log(store.people);
+	console.log(store.planets);
 
 	// console.log(`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`);
 	return (
@@ -14,11 +14,11 @@ export const PlanetProfile = props => {
 			<div className="row d-flex align-items-center justify-content-center mx-1 galaxyBackground">
 				<div className="col-lg-6 col-11 d-flex justify-content-center">
 					<img
-						src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}
-						onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
-						className="card-img-top w-75"
-						alt={store.people[params.theid].name}
-					/>
+                        src={`https://starwars-visualguide.com/assets/img/planets/${params.theid}.jpg`}
+                        onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
+                        className="card-img-top"
+                        alt={item.name}
+                    />
 				</div>
 				<div className="col-lg-6 col-11 text-white text-center d-flex align-items-center">
 
@@ -32,32 +32,32 @@ export const PlanetProfile = props => {
 			<div className="row mx-1 galaxyBackground">
 				<div className="col-lg-2 col-6 border-end text-center">
 					<p className="text-warning fs-5">Name</p>
-					<h1 className="text-white">{store.people[params.theid - 1].name}</h1>
+					<h1 className="text-white">{store.planets[params.theid].name}</h1>
 
 				</div>
 				<div className="col-lg-2 col-6 border-end text-center">
-					<p className="text-warning fs-5">Birth Year</p>
-					<h1 className="text-white">{store.people[params.theid - 1].birth_year}</h1>
+					<p className="text-warning fs-5">Diameter</p>
+					<h1 className="text-white">{store.planets[params.theid].diameter}</h1>
 
 				</div>
 				<div className="col-lg-2 col-6 border-end text-center">
-					<p className="text-warning fs-5">Gender</p>
-					<h1 className="text-white">{store.people[params.theid - 1].gender}</h1>
+					<p className="text-warning fs-5">climate</p>
+					<h1 className="text-white">{store.people[params.theid].climate}</h1>
 
 				</div>
 				<div className="col-lg-2 col-6 border-end text-center">
-					<p className="text-warning fs-5">Height</p>
-					<h1 className="text-white">{store.people[params.theid - 1].height}</h1>
+					<p className="text-warning fs-5">Gravity</p>
+					<h1 className="text-white">{store.people[params.theid].gravity}</h1>
 
 				</div>
 				<div className="col-lg-2 col-6 border-end text-center">
-					<p className="text-warning fs-5">Skin Color</p>
-					<h1 className="text-white">{store.people[params.theid - 1].skin_color}</h1>
+					<p className="text-warning fs-5">Terrain</p>
+					<h1 className="text-white">{store.people[params.theid].terrain}</h1>
 
 				</div>
 				<div className="col-lg-2 col-6 text-center">
-					<p className="text-warning fs-5">Eye Color</p>
-					<h1 className="text-white">{store.people[params.theid - 1].eye_color}</h1>
+					<p className="text-warning fs-5">Rotation Period</p>
+					<h1 className="text-white">{store.people[params.theid].rotation_period}</h1>
 				</div>
 
 			</div>
