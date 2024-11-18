@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
+import PropTypes, { element } from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -7,17 +7,43 @@ export const CharacterProfile = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+		<>
+			<div className="row">
+				<div className="col-6">
+				<img
+                        src={`https://starwars-visualguide.com/assets/img/characters/{${params.theid}}.jpg`}
+                        onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
+                        className="card-img-top"
+                        alt={store.people[params.theid].name}
+                    />
+				</div>
+				<div className="col-6">
 
-			<hr className="my-4" />
+				</div>
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
+			</div>
+			<div className="row">
+				<div className="col-2">
+
+				</div>
+				<div className="col-2">
+
+				</div>
+				<div className="col-2">
+
+				</div>
+				<div className="col-2">
+
+				</div>
+				<div className="col-2">
+
+				</div>
+				<div className="col-2">
+
+				</div>
+
+			</div>
+		</>
 	);
 };
 
