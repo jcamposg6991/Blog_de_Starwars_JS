@@ -8,8 +8,6 @@ export const PlanetProfile = props => {
 	const params = useParams();
 	console.log(store.planets);
 
-
-	// console.log(`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`);
 	return (
 		<>
 			<div className="row d-flex align-items-center justify-content-center mx-1 galaxyBackground">
@@ -18,7 +16,7 @@ export const PlanetProfile = props => {
 						src={`https://starwars-visualguide.com/assets/img/planets/${parseInt(params.theid) + 1}.jpg`}
 						onError={(e) => { e.target.src = "https://via.placeholder.com/300?text=Image+Not+Available"; }}
 						className="card-img-top"
-					// alt={store.planets[params.theid].name}
+
 					/>
 				</div>
 				<div className="col-lg-6 col-11 text-white text-center d-flex align-items-center">

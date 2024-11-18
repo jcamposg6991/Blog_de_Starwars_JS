@@ -10,7 +10,6 @@ export const CardPeople = () => {
         actions.loadSomePeople();
     }, []);
 
-    console.log(store.people);
 
     const peopleItems = store.people.map((item) => (
         <Carousel.Item key={item.id}>

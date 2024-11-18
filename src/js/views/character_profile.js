@@ -8,7 +8,6 @@ export const CharacterProfile = props => {
 	const params = useParams();
 	console.log(store.people);
 
-	// console.log(`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`);
 	return (
 		<>
 			<div className="row d-flex align-items-center justify-content-center mx-1 galaxyBackground">
