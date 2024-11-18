@@ -38,7 +38,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 									gender: data.result.properties.gender,
 									hair_color: data.result.properties.hair_color,
 									eye_color: data.result.properties.eye_color,
-									description: data.result.description
+									description: data.result.description,
+									height: data.result.properties.height,
+									skin_color: data.result.properties.skin_color,
+									birth_year: data.result.properties.birth_year,
+									mass: data.result.properties.mass,
+									homeworld: data.result.properties.homeworld,
+									created: data.result.properties.created,
+									edited: data.result.properties.edited,
 								}))
 						);
 						return Promise.all(peoplePromises);

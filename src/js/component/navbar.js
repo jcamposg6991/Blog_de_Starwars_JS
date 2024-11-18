@@ -18,7 +18,7 @@ export const Navbar = () => {
 			</Link>
 			<div className="ml-auto pe-3">
 				<div class="btn-group" role="group">
-					<button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					<button id="btnGroupDrop1" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 						Favorites
 					</button>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnGroupDrop1">
