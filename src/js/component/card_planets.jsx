@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const CardPlanets = () => {
     const { store, actions } = useContext(Context);
@@ -27,7 +28,7 @@ export const CardPlanets = () => {
                         </p>
                         <div className="row">
                             <div className="col-6 d-flex justify-content-start">
-                                <button type="button" className="btn btn-outline-primary">Learn More!</button>
+                                <Link type="button" className="btn btn-outline-primary" to={"/planetProfile/" + index}>Learn More!</Link>
                             </div>
                             <div className="col-6 d-flex justify-content-end">
                                 <button
